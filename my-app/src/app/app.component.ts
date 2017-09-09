@@ -6,5 +6,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  name: string;
+  age: number;
+  books: Array<string>;
+  address: Address;
+
+  constructor() {
+    this.name = 'JJJay';
+    this.age = 44;
+    this.books = ['java', '.net'];
+    this.address = { line1: "7, Victoria Rd", town: "Nice town", country: "US", postCode: "W6 7XX" };
+  }
+
+  ngOnInit() {
+    console.log('Init..');
+
+  }
+}
+
+interface Address {
+  line1: string,
+  town: string,
+  country: string,
+  postCode: string
 }
