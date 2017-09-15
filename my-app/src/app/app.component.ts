@@ -22,6 +22,12 @@ export class AppComponent {
     console.log('Init..');
 
   }
+
+  clicked(){
+    console.log('clicked..');
+    this.books.push('xxx');
+  }
+
 }
 
 interface Address {

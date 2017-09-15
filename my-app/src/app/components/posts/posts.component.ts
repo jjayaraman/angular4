@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { PostsService } from '../../services/posts/posts.service';
-import 'rxjs/add/operator/map' ;
 
 @Component({
   selector: 'app-posts',
@@ -16,7 +15,6 @@ export class PostsComponent implements OnInit {
   constructor(private postsService: PostsService) {
 
     postsService.getPosts().subscribe(data => {
-    //  console.log(data);
       this.posts = data;
     });
   }
