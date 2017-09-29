@@ -26,4 +26,12 @@
     <br>
     <button class="btn btn-primary">Create</button> <br><br>
 
+    <!-- List -->
+    <ol>
+        <li *ngFor='let user of users'>
+            ID : {{user.id}} <br> First Name : {{user.firstName}} <br>Last Name : {{user.lastName}} <br> Email : {{user.email}}
+        </li>
+    </ol>
+
+
 </form>

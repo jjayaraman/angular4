@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { UserService } from '../services/user.service';
+/** import { Map } from 'rxjs/add/operator/map';  **/
 @Component({
   selector: 'app-lesson1',
   templateUrl: './lesson1.component.html',
@@ -7,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Lesson1Component implements OnInit {
 
-  constructor() { }
+  users: User[];
+
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
+    this.userService.getUsers().subscribe(data => {this.users = data; });
   }
+
 
 }
 
+export interface User {
+  id: number;
+  userName: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+}
