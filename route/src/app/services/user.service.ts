@@ -20,6 +20,7 @@ export class UserService {
   }
 
   createUser(user: User) {
-    return this.http.post(URL + '/user', user).map(res => res.json());
+    console.log('Data passed to create user : ' + JSON.stringify(user));
+    return this.http.post(URL + '/users', user).map(res => res.json());
   }
 }
