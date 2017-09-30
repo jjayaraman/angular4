@@ -5,17 +5,17 @@
 
     <div class="form-group">
         <label for="userName">User name</label>
-        <input id="userName" type="text" class="form-control" placeholder="user name" />
+        <input id="userName" [(ngModel)]="user.userName" class="form-control" placeholder="user name" />
     </div>
 
     <div class="form-group">
         <label for="firstName">First name</label>
-        <input id="firstName" type="text" class="form-control" />
+        <input id="firstName" [(ngModel)]="user.firstName" type="text" class="form-control" />
     </div>
 
     <div class="form-group">
         <label for="lastName">Last name</label>
-        <input id="lastName" type="text" class="form-control" />
+        <input id="lastName" [(ngModel)]="user.lastName" type="text" class="form-control" />
     </div>
 
     <div class="form-group">
@@ -24,7 +24,7 @@
     </div>
 
     <br>
-    <button class="btn btn-primary">Create</button> <br><br>
+    <button class="btn btn-primary" (click)=create()>Create</button> <br><br>
 
     <!-- List -->
     <table class="table table-striped">
@@ -45,5 +45,6 @@
         </tr>
     </table>
 
-    Test :: {{user}}
+
+    {{u.firstName}}
 </form>
