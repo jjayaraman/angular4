@@ -31,24 +31,24 @@ export class Lesson1Component implements OnInit {
     );
   }
 
-  getNextId(){
-    var maxId = 0;
+  getNextId() {
+    let maxId = 0;
 
     this.users.forEach(user => {
-      if(user.id > maxId){
+      if (user.id > maxId) {
         maxId = user.id;
       }
     });
 
-    return maxId+1;
-  } 
+    return maxId + 1;
+  }
 
-  getUser(id:number) {
+  getUser(id: number) {
     this.userService.getUser(id).subscribe(data => { this.user = data; });
   }
 
   createAction() {
-    //    console.log('creating... ' + this.user);
+    //    console.log('creating... ' + this.user);ß
     this.userService.createUser(this.user).subscribe(
       data => { console.log(data); },
       error => { console.log(error); },
@@ -58,6 +58,19 @@ export class Lesson1Component implements OnInit {
       }
     );
   }
+
+  updateUserAction(user: User) {
+    this.userService.updateUser(user).subscribe(
+      data => { },
+      error => { console.log(error); },
+      () => {
+        // Reload data after create success
+        this.getUsers();
+        this.rowSelected = false;
+      }
+    );
+  }
+
   cancelAction() {
     this.rowSelected = false;
     this.user = new User();
@@ -70,7 +83,7 @@ export class Lesson1Component implements OnInit {
     this.rowSelected = true;
   }
 
-  deleteUserAction(id:number) {
+  deleteUserAction(id: number) {
     this.userService.deleteUser(id).subscribe(
       data => { },
       error => { console.log(error); },

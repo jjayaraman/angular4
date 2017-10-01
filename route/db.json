@@ -1,18 +1,11 @@
 {
   "users": [
     {
-      "id": 2,
-      "userName": "dduck",
-      "firstName": "Donald",
-      "lastName": "Duck",
-      "email": "dduck@gmail.com"
-    },
-    {
-      "id": 3,
-      "userName": "gg",
-      "firstName": "hh",
-      "lastName": "iu",
-      "email": "hhhh"
+      "id": 1,
+      "userName": "wwwww",
+      "firstName": "Jayakumar",
+      "lastName": "Jayaraman",
+      "email": "ssss"
     }
   ]
 }
