@@ -23,4 +23,8 @@ export class UserService {
     console.log('Data passed to create user : ' + JSON.stringify(user));
     return this.http.post(URL + '/users', user).map(res => res.json());
   }
+
+  updateUser(user: User) {
+    this.http.put(URL + '/users/1', user);
+  }
 }

@@ -12,11 +12,13 @@ export class Lesson1Component implements OnInit {
 
   users: User[];
   user: User = new User();
+  rowSelected: boolean;
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.getUsers();
+    this.rowSelected = false;
   }
 
   getUsers() {
@@ -33,8 +35,8 @@ export class Lesson1Component implements OnInit {
     this.userService.getUser().subscribe(data => { this.user = data; });
   }
 
-  create() {
-    console.log('creating... ' + this.user);
+  createAction() {
+    //    console.log('creating... ' + this.user);
     this.userService.createUser(this.user).subscribe(
       data => { console.log(data); },
       error => { console.log(error); },
@@ -43,6 +45,17 @@ export class Lesson1Component implements OnInit {
         this.getUsers();
       }
     );
+  }
+  cancelAction() {
+    this.rowSelected = false;
+    this.user = new User();
+    this.getUsers();
+  }
+
+  rowSelect(selectedUser: User) {
+    //    console.log('selected row is : ' + JSON.stringify(selectedUser));
+    this.user = selectedUser;
+    this.rowSelected = true;
   }
 }
 
