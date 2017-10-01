@@ -13,12 +13,15 @@ export class Lesson1Component implements OnInit {
   users: User[];
   user: User = new User();
   rowSelected: boolean;
+  success: string = null;
+  error: string = null;
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.getUsers();
     this.rowSelected = false;
+    this.success = null;
   }
 
   getUsers() {
@@ -50,8 +53,8 @@ export class Lesson1Component implements OnInit {
   createAction() {
     //    console.log('creating... ' + this.user);ß
     this.userService.createUser(this.user).subscribe(
-      data => { console.log(data); },
-      error => { console.log(error); },
+      data => { this.success = 'Record created sucessfully.'; },
+      error => { this.error = error; },
       () => {
         // Reload data after create success
         this.getUsers();
@@ -61,8 +64,8 @@ export class Lesson1Component implements OnInit {
 
   updateUserAction(user: User) {
     this.userService.updateUser(user).subscribe(
-      data => { },
-      error => { console.log(error); },
+      data => { this.success = 'Record updated sucessfully.'; },
+      error => { this.error = error; },
       () => {
         // Reload data after create success
         this.getUsers();
@@ -75,6 +78,8 @@ export class Lesson1Component implements OnInit {
     this.rowSelected = false;
     this.user = new User();
     this.getUsers();
+    this.success = null;
+    this.error = null;
   }
 
   rowSelect(selectedUser: User) {
@@ -85,8 +90,8 @@ export class Lesson1Component implements OnInit {
 
   deleteUserAction(id: number) {
     this.userService.deleteUser(id).subscribe(
-      data => { },
-      error => { console.log(error); },
+      data => { this.success = 'Record deleted sucessfully.'; },
+      error => { this.error = error; },
       () => { this.getUsers(); }
     );
   }

@@ -1,5 +1,8 @@
 <form>
 
+    <div class="alert alert-success" [hidden]='success === null'>{{success}}</div>
+    <div class="alert alert-danger" [hidden]='error === null'>{{error}}</div>
+
     <h4>User</h4>
     <br>
 

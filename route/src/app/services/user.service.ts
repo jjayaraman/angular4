@@ -10,7 +10,6 @@ export class UserService {
 
   constructor(private http: Http) { }
 
-
   getUsers() {
     return this.http.get(URL + '/users').map(res => res.json());
   }
