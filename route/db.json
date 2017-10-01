@@ -1,13 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "userName": "jayaramanj",
-      "firstName": "Jaya",
-      "lastName": "kumar",
-      "email": "jj@gmail.com"
-    },
-    {
       "id": 2,
       "userName": "dduck",
       "firstName": "Donald",
@@ -16,45 +9,10 @@
     },
     {
       "id": 3,
-      "userName": "g",
-      "firstName": "h",
-      "lastName": "j",
-      "email": "l"
-    },
-    {
-      "id": "4",
-      "userName": "xx",
-      "firstName": "uuu",
-      "lastName": "hhh",
-      "email": "kjkja"
-    },
-    {
-      "id": "SkkERYpj-",
-      "userName": "5",
-      "firstName": "gg",
-      "lastName": "iou",
-      "email": "ouoooouou"
-    },
-    {
-      "id": "6",
-      "userName": "hhh",
-      "firstName": "iii",
-      "lastName": "tyty",
-      "email": "oooooo"
-    },
-    {
-      "id": 7,
-      "userName": "hoiou",
-      "firstName": "uou",
-      "lastName": "o",
-      "email": "ou"
-    },
-    {
-      "id": 8,
-      "userName": "",
-      "firstName": "",
-      "lastName": "",
-      "email": ""
+      "userName": "gg",
+      "firstName": "hh",
+      "lastName": "iu",
+      "email": "hhhh"
     }
   ]
 }

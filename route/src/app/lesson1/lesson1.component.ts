@@ -26,13 +26,25 @@ export class Lesson1Component implements OnInit {
       data => { this.users = data; },
       error => { console.log(error); },
       () => {
-        this.user = { id: this.users.length + 1, userName: '', firstName: '', lastName: '', email: '' };
+        this.user = { id: this.getNextId(), userName: '', firstName: '', lastName: '', email: '' };
       }
     );
   }
 
-  getUser() {
-    this.userService.getUser().subscribe(data => { this.user = data; });
+  getNextId(){
+    var maxId = 0;
+
+    this.users.forEach(user => {
+      if(user.id > maxId){
+        maxId = user.id;
+      }
+    });
+
+    return maxId+1;
+  } 
+
+  getUser(id:number) {
+    this.userService.getUser(id).subscribe(data => { this.user = data; });
   }
 
   createAction() {
@@ -56,6 +68,14 @@ export class Lesson1Component implements OnInit {
     //    console.log('selected row is : ' + JSON.stringify(selectedUser));
     this.user = selectedUser;
     this.rowSelected = true;
+  }
+
+  deleteUserAction(id:number) {
+    this.userService.deleteUser(id).subscribe(
+      data => { },
+      error => { console.log(error); },
+      () => { this.getUsers(); }
+    );
   }
 }
 

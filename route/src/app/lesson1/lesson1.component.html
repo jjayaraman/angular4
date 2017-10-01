@@ -40,6 +40,7 @@
             <th>First Name </th>
             <th>Last Name </th>
             <th>Email</th>
+            <th>Delete</th>
         </tr>
 
         <tr *ngFor="let user of users">
@@ -48,6 +49,7 @@
             <td>{{user.firstName}} </td>
             <td>{{user.lastName}} </td>
             <td>{{user.email}} </td>
+            <td><button class="btn btn-primary" (click)='deleteUserAction(user.id)'>Delete</button></td>
         </tr>
     </table>
 

@@ -15,16 +15,20 @@ export class UserService {
     return this.http.get(URL + '/users').map(res => res.json());
   }
 
-  getUser() {
-    return this.http.get(URL + '/users/1').map(res => res.json());
+  getUser(id:number) {
+    return this.http.get(URL + '/users/' +id).map(res => res.json());
   }
 
   createUser(user: User) {
-    console.log('Data passed to create user : ' + JSON.stringify(user));
+   // console.log('Data passed to create user : ' + JSON.stringify(user));
     return this.http.post(URL + '/users', user).map(res => res.json());
   }
 
   updateUser(user: User) {
     this.http.put(URL + '/users/1', user);
+  }
+
+  deleteUser(id: number) {
+    return this.http.delete(URL + '/users/' + id);
   }
 }
